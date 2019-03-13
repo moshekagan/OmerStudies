@@ -1,23 +1,19 @@
 class Person {
-    String name
-    Integer age
-    Integer grade
+  String name
+  Integer age
+  ExamList exams
 
-    Person(name, age, grade) {
-        this.name = name
-        this.age = age
-        this.grade = grade
+  Person(name, age, exams) {
+    this.name = name
+    this.age = age
+    this.exams = exams
+  }
+
+    public def printPerson() {
+      println(this.name + " " + this.age + " " + this.exams.calcAvg())
     }
 
-    def increaseAge(Integer years) {
-        this.age += years
-    }
-
-    public getGrade() {
-    return this.grade
-    }
-    
-    public def whoAMI() {
-      println ("name: " + this.name + " age: " + this.age + " grade: " + this.grade)
+    public def getAvg() {
+      this.exams.calcAvg()
     }
 }

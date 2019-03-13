@@ -1,21 +1,23 @@
 class Example {
     static void main(String[] args) {
-        def N = 5
+        def date = new Date(22, 11, 1999)
+        def date2 = new Date(1, 12, 1999)
 
-         def yossis = new Students(N, "Yossi")
-        // def avis = new Students(N * 2, "avi")
-        // def moshes = new Students(12, "moshe")
+        def exam_1 = new Exam("Math", 89, date)
+        def exam_2 = new Exam("Eng", 94, date2)
 
-        //yossis.printClass()
-        //yossis.printAverage()
-        yossis.printClassAndAverage()
+        def N = 2
+        def examArray = new Exam[N]
+        examArray = [exam_1, exam_2]
+        def examList = new ExamList(examArray, N)
 
+        def person1 = new Person("Omer", 27, examList)
+        def person2 = new Person("Moshe", 28, examList)
 
-        //avis.printClass()
+        def personArray = new Person[N]
+        personArray = [person1, person2]
+        def students1 = new Students(personArray, N)
 
-        //moshes.printClass()
-
-        // def Omer = new Person("Omer", 27, 89)
-        // Omer.whoAMI()
+        students1.printClassAndAverage()
     }
 }
